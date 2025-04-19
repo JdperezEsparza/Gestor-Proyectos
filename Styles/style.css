@@ -1,0 +1,92 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; /* Añade esto para eliminar cualquier padding predeterminado */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.white-line {
+    height: 5px;
+    background-color: white;
+    margin: 0; /* Elimina cualquier margen */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    margin: 0; /* Elimina márgenes del header */
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 20px 0; /* Añade margen solo al login-box */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Elimina padding interno */
+    margin: 0; /* Elimina márgenes */
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+    margin: 0; /* Elimina márgenes del footer */
+}
+
+/* Resto de tus estilos... */
+.user-table {
+    width: 100%;
+}
+.user-table th {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+.user-table td {
+    vertical-align: middle;
+}
+.role-badge {
+    font-size: 0.8em;
+    padding: 0.35em 0.65em;
+}
+
+.container2 {
+    max-width: 600px;
+    margin-top: 100px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
