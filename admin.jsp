@@ -8,11 +8,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Panel de Control</title>
-    <!-- Bootstrap CSS -->
+    <title>Panel de Control admin</title>
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet">
-    <!-- Bootstrap Icons -->
+
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="Styles/style2.css">
@@ -84,7 +84,7 @@
                             <strong>${sessionScope.rol}</strong>
                         </div>
 
-                        <!-- Contenido principal según el rol -->
+                        <!-- Contenido principal -->
                         <c:choose>
                             <c:when test="${sessionScope.rol == 'Administrador'}">
                                 <div class="alert alert-warning">

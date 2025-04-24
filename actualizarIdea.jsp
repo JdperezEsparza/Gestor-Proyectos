@@ -10,7 +10,6 @@ String titulo = request.getParameter("titulo");
 String descripcion = request.getParameter("descripcion");
 String tecnologias = request.getParameter("tecnologias");
 String fecha_proposicion = request.getParameter("fecha_proposicion");
-String estado = request.getParameter("estado");
 String observaciones = request.getParameter("observaciones");
 
 if(id_idea == null || titulo == null || descripcion == null || tecnologias == null || 
@@ -33,14 +32,12 @@ if(id_idea == null || titulo == null || descripcion == null || tecnologias == nu
         descripcion = ?, 
         tecnologias = ?, 
         fecha_proposicion = ?,
-        estado = ?,
         observaciones = ?
         WHERE id_idea = ?
         <sql:param value="<%=titulo%>" />
         <sql:param value="<%=descripcion%>" />
         <sql:param value="<%=tecnologias%>" />
         <sql:param value="<%=fecha_proposicion%>" />
-        <sql:param value="<%=estado%>" />
         <sql:param value="<%=observaciones%>" />
         <sql:param value="<%=id_idea%>" />
     </sql:update>

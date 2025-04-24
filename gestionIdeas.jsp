@@ -8,7 +8,7 @@
 
         <head>
           <meta charset="UTF-8">
-          <title>Panel de Control</title>
+          <title>Gestion de ideas</title>
           <!-- Bootstrap CSS -->
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
           <!-- Bootstrap Icons -->
@@ -30,7 +30,7 @@
                 <h3 class="mb-0">Gestión de ideas</h3>
               </div>
               <div>
-                <a href="javascript:history.back()" class="btn btn-light me-2">
+                <a href="coordinacion.jsp" class="btn btn-light me-2">
                   <i class="bi bi-arrow-left"></i> Volver atrás
                 </a>
               </div>
@@ -52,7 +52,13 @@
 
 
             <sql:query var="result" dataSource="${baseDeDatos}">
-              SELECT id_idea, titulo, descripcion, tecnologias, fecha_proposicion, observaciones,estado rol FROM ideas
+              SELECT i.id_idea, i.titulo, i.descripcion, i.tecnologias, i.fecha_proposicion, i.observaciones 
+              FROM ideas i
+              WHERE NOT EXISTS (
+                SELECT 1 
+                FROM anteproyectos a 
+                WHERE a.id_idea = i.id_idea  -- Relación entre anteproyecto e idea
+              )
             </sql:query>
 
             <div class="table-responsive">
@@ -64,7 +70,6 @@
                     <th>Descripcion</th>
                     <th>Tecnologias</th>
                     <th>fecha de la propuesta</th>
-                    <th>Estado</th>
                     <th>Observaciones</th>
                     <th>Acciones</th>
                   </tr>
@@ -88,9 +93,6 @@
                         <c:out value="${row.fecha_proposicion}" />
                       </td>
                       <td>
-                        <c:out value="${row.estado}" />
-                      </td>
-                      <td>
                         <c:out value="${row.observaciones}" />
                       </td>
                       <td>
@@ -98,8 +100,7 @@
                         <a href="#" class="btn btn-info btn-sm " data-bs-toggle="modal"
                           data-bs-target="#editarIdeaModal" data-id="${row.id_idea}" data-titulo="${row.titulo}"
                           data-descripcion="${row.descripcion}" data-tecnologias="${row.tecnologias}"
-                          data-fecha_proposicion="${row.fecha_proposicion}" data-observaciones="${row.observaciones}"
-                          data-estado="${row.estado}">
+                          data-fecha_proposicion="${row.fecha_proposicion}" data-observaciones="${row.observaciones}">
                           <i class="bi bi-pencil-square"></i> Editar
                         </a>
                         <!-- Botón para Eliminar -->
@@ -143,10 +144,6 @@
                       <input type="date" class="form-control" id="fecha_proposicion" name="fecha_proposicion" required>
                     </div>
                     <div class="mb-3">
-                      <label for="estado" class="form-label">Estado</label>
-                      <input type="text" class="form-control" id="estado" name="estado" value="Libre" readonly>
-                    </div>
-                    <div class="mb-3">
                       <label for="observaciones" class="form-label">Observaciones</label>
                       <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
                     </div>
@@ -188,10 +185,7 @@
                       <label class="form-label">Fecha de Proposición</label>
                       <input type="date" class="form-control" name="fecha_proposicion" id="edit-fecha" required>
                     </div>
-                    <div class="mb-3">
-                      <label for="estado" class="form-label">Estado</label>
-                      <input type="text" class="form-control" id="edit-estado" name="estado" readonly>
-                    </div>
+                  
                     <div class="mb-3">
                       <label class="form-label">Observaciones</label>
                       <textarea class="form-control" name="observaciones" id="edit-observaciones" rows="3"></textarea>

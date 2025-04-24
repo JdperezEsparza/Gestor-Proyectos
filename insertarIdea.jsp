@@ -5,13 +5,13 @@
 
 <%-- Insertar la idea en la BD (todos los campos como String) --%>
 <sql:update dataSource="${baseDeDatos}" var="resultado">
-    INSERT INTO ideas (titulo, descripcion, tecnologias, fecha_proposicion, estado, observaciones) 
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO ideas (titulo, descripcion, tecnologias, fecha_proposicion, observaciones) 
+    VALUES (?, ?, ?, ?, ?)
     <sql:param value="${param.titulo}" />           
     <sql:param value="${param.descripcion}" />      
     <sql:param value="${param.tecnologias}" />      
     <sql:param value="${param.fecha_proposicion}" /> 
-    <sql:param value="Libre" />                    
+                   
     <sql:param value="${param.observaciones}" />      
 </sql:update>
 

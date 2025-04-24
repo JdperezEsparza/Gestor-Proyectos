@@ -165,7 +165,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                                        <button type="submit" class="btn btn-dark">Guardar Usuario</button>
                                     </div>
                                 </form>
                             </div>

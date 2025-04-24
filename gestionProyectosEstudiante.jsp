@@ -188,7 +188,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <form method="post" action="subirRadicadoDirector.jsp">
-                                    <div class="modal-header bg-primary text-white">
+                                    <div class="modal-header bg-success text-white">
                                         <h5 class="modal-title" id="subirRadicadoDirectorModalLabel">Subir radicado del
                                             director</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -229,7 +229,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary" ${proyectoEstudiante.rowCount==0
+                                        <button type="submit" class="btn btn-success" ${proyectoEstudiante.rowCount==0
                                             ? 'disabled' : '' }>
                                             Guardar radicado
                                         </button>
@@ -346,7 +346,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <form method="post" action="asignarCompañero.jsp">
-                                    <div class="modal-header bg-info text-white">
+                                    <div class="modal-header bg-success text-white">
                                         <h5 class="modal-title" id="asignarCompaneroModalLabel">Asignar compañero de
                                             proyecto</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -393,7 +393,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-info">Asignar compañero</button>
+                                        <button type="submit" class="btn btn-success">Asignar compañero</button>
                                     </div>
                                 </form>
                             </div>
